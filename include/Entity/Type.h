@@ -6,7 +6,7 @@
 
 /// 基础类型的种类, Unknown只用于空数组的元素类型
 enum class BasicTypeKind {
-    Boolean, Integer, Float, String, Unknown
+    Boolean, Integer, Uinteger, Float, String, Unknown
 };
 
 class ArrayType;
@@ -21,6 +21,8 @@ public:
     [[nodiscard]] virtual bool isBoolean() const = 0;
 
     [[nodiscard]] virtual bool isInteger() const = 0;
+    
+    [[nodiscard]] virtual bool isUinteger() const = 0;
 
     [[nodiscard]] virtual bool isFloat() const = 0;
 
