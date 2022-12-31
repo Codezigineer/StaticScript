@@ -80,12 +80,16 @@ bool BasicType::isInteger() const {
     return kind == BasicTypeKind::Integer;
 }
 
+bool BasicType::isUinteger() const {
+    return kind == BasicTypeKind::Uinteger;
+}
+
 bool BasicType::isFloat() const {
     return kind == BasicTypeKind::Float;
 }
 
 bool BasicType::isNumber() const {
-    return kind == BasicTypeKind::Integer || kind == BasicTypeKind::Float;
+    return kind == BasicTypeKind::Integer || kind == BasicTypeKind::Uinteger || kind == BasicTypeKind::Float;
 }
 
 bool BasicType::isString() const {
@@ -139,6 +143,10 @@ bool ArrayType::isBoolean() const {
 }
 
 bool ArrayType::isInteger() const {
+    return false;
+}
+
+bool ArrayType::isUinteger() const {
     return false;
 }
 
